@@ -17,10 +17,11 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 function Header() {
   const [mobileMenu, setMobileMenu] = useState({ left: false });
 
+  const navigate = useNavigate();
   const list = (anchor) => (
     <Box
       sx={{
@@ -32,7 +33,7 @@ function Header() {
     >
       <List>
         {nav_titles.map((item, index) => (
-          <ListItem key={item.index} disablePadding>
+          <ListItem key={item.index} disablePadding onClick={()=>navigate(item.path)}>
             <ListItemButton>
               <ListItemIcon>
                 {index === 0 && <HomeIcon />}
@@ -66,15 +67,15 @@ function Header() {
       display: "Home",
     },
     {
-      path: "/",
+      path: "/dishes",
       display: "Dishes",
     },
     {
-      path: "/",
+      path: "/services",
       display: "Services",
     },
     {
-      path: "/",
+      path: "/about",
       display: "About Us",
     },
   ];
@@ -156,7 +157,7 @@ function Header() {
 
         <NavBarLinksBox>
           {nav_titles.map((item, index) => (
-            <NavBarLink variant="body2">{item.display}</NavBarLink>
+            <NavBarLink variant="body2" onClick={()=>navigate(item.path)}>{item.display}</NavBarLink>
           ))}
         </NavBarLinksBox>
       </Box>

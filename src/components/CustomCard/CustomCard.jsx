@@ -30,7 +30,7 @@ const InfoBox = styled(Box)(() => ({
 }));
 
 const ImgContainer = styled(Box)(() =>({
-
+width: "100%",
 }));
   return (
 <DishBox>
@@ -45,6 +45,34 @@ ${price}
 <Typography variant='body2' sx={{ my: 2 }}>
 {item}
 </Typography>
+<Box
+sx={{
+    display:"flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+}}
+>
+<InfoBox>
+    <img src={likeIcon} alt="bedroomsIcon" />
+    <Typography variant="body2" sx={{ mt: 1 }}>
+    {likes}
+    </Typography>
+</InfoBox>
+
+<InfoBox>
+    <img src={heartIcon} alt="bathroomsIcon" />
+    <Typography variant="body2" sx={{ mt: 1 }}>
+    {heart}
+    </Typography>
+</InfoBox>
+
+<InfoBox>
+    <img src={shareIcon} alt="spaceIcon" />
+    <Typography variant="body2" sx={{ mt: 1 }}>
+    {share}
+    </Typography>
+</InfoBox>
+</Box>
 </Box>
 </DishBox>
   )
