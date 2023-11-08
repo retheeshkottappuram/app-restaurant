@@ -14,6 +14,7 @@ function LayoutRoutes() {
         <Header />
 <Routes>
     <Route path='/' element={<Home />} />
+    <Route path='/app-restaurant' element={<Home />} />
     <Route path='/dishes' element={<Dishes />} />
     <Route path='/services' element={<Booking />} />
     <Route path='/about' element={<About />} />
